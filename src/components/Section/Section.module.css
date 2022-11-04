@@ -1,0 +1,12 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  background: #232626;
+  color: #ffffff;
+  padding-top: 50px;
+  padding-left: 50px;
+}
+
+.title {
+  margin-bottom: 20px;
+}
