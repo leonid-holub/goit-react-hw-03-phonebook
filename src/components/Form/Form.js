@@ -10,6 +10,7 @@ const phonebookOptions = {
   title:
     "Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan",
   required: '',
+  autoComplete: 'off',
 };
 
 const contactsOptions = {
@@ -18,6 +19,7 @@ const contactsOptions = {
   title:
     'Phone number must be digits and can contain spaces, dashes, parentheses and can start with +',
   required: '',
+  autoComplete: 'off',
 };
 
 class Form extends React.Component {
@@ -48,7 +50,7 @@ class Form extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.submitChange}>
+      <form onSubmit={this.submitChange} autoComplete="off">
         <Label labelName="Name">
           <input
             className={css.input}

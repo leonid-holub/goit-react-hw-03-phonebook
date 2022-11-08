@@ -43,6 +43,23 @@ class App extends React.Component {
     });
   };
 
+  componentDidMount() {
+    const contacts = localStorage.getItem('contacts');
+    const parsedContacts = JSON.parse(contacts);
+    if (parsedContacts) {
+      this.setState({
+        contacts: parsedContacts,
+      });
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.contacts !== prevState.contact) {
+      const contacts = JSON.stringify(this.state.contacts);
+      localStorage.setItem('contacts', contacts);
+    }
+  }
+
   render() {
     const normilizeFilter = this.state.filter.toLowerCase();
     const visibleContacts = this.state.contacts.filter(contact =>
